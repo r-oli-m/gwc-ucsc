@@ -1,15 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import '../src/components/Navbar'
-import Welcome from './components/Welcome';
-import Navbar from './components/Navbar';
+import  '../src/components/Navbar'
+import  '../src/components/UpcomingEvents'
+import UpcomingEvents from '../src/components/UpcomingEvents';
 function App() {
   return (
-    <>
-      <Navbar />
-      <Welcome />
-
-    </>
+    <div className="App">
+      <UpcomingEvents/>
+    </div>
   );
 }
 
