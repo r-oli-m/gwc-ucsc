@@ -1,0 +1,79 @@
+.upcoming-events-container {
+    text-align: center;
+  }
+  
+  .upcoming-events-header {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    color: #00B3A6;
+    font-size: 50px;
+  }
+  
+  .upcoming-events-content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .left-column {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+  }
+  
+  .event-item {
+    margin-bottom: 100px;
+    margin-left: 80px;
+    color: #166A63
+  }
+  
+  .event-title {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 70px;
+    font-size: 40px;
+    /* text-decoration: underline; */
+    color: #166A63;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #454545;
+  }
+  
+  .event-description {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-left: 60px;
+    font-size: 50px;
+  }
+
+  .right-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-right: 80px;
+  }
+
+  .event {
+    font-size: 24px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .event::before {
+    content: ''; /* Add content for the pseudo-element */
+    position: absolute;
+    left: -30px; /* Adjust position of the circle */
+    top: 20%;
+    transform: translateY(-50%);
+    width: 50px; /* Adjust width and height for the size of the circle */
+    height: 50px;
+    border-radius: 50%; /* Create circular shape */
+    background-color: rgba(0, 179, 166, 0.4); /* Opaque background color */
+  }
+
+  
+  .green-square {
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 700px;
+    height: 500px;
+    background-color: #F4FBEF;
+  }
