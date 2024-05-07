@@ -1,15 +1,18 @@
 import React from 'react'
 import '../styles/Navbar.css'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   
   return (
     <div className='navbar'>
-      <img className="logo" src="GWC_Final-Logo_Teal.png" alt="logo" />
+      <Link to="/" className="logo">
+        <img src="GWC_Final-Logo_Teal.png" alt="logo" />
+      </Link>
       <div className='links'>
-        <a href="/about">About Us</a>
-        <a href="/contact">Contact</a>
-        <a href="/getinvolved">Get Involved</a>
-        <a href="/resources">Resources</a>
+        <Link to="/about">About Us</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/events">Events</Link>
+        <Link to="/resources">Resources</Link>
       </div>
     </div>
   )
