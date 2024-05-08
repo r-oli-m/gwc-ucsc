@@ -1,10 +1,11 @@
 import React from 'react';
+import '../styles/Resources.css';
 
 const Resources = () => {
   return (
-    <div>
+    <div className='resources'>
       <h1>Resources</h1>
-      {/* Add your resource components here */}
+      
     </div>
   );
 };
