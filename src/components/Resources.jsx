@@ -1,10 +1,12 @@
 import React from 'react';
+import InstagramEmbed from './InstagramProfile';
+import '../styles/Resources.css';
 
 const Resources = () => {
   return (
-    <div>
+    <div className='resources'>
       <h1>Resources</h1>
-      {/* Add your resource components here */}
+      <InstagramEmbed url="https://www.instagram.com/p/C6FRqBCPv2J/" /> {/* pass the insta post url u wanna see*/}
     </div>
   );
 };
