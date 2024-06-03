@@ -9,3 +9,57 @@
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
 }
+
+.heading{
+  font-family: 'Poppins', sans-serif;
+  color: #393943;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 20px;
+}
+
+.row {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-bottom: 10px;
+  }
+  
+  .item {
+    flex: 1;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    margin: 5px;
+    text-align: center;
+  }
+
+  .memberPicture img{
+    width: 150px;  
+    height: 150px; 
+    margin: 10px;
+    border-radius: 50%; 
+    object-fit: cover;
+  }
+
+  .memberLinkedin a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    color: #6E7477;
+    padding: 0 40px;
+}
+
+.memberLinkedin a:hover {
+    opacity: 0.75;
+}
+
+.memberName{
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.memberPosition{
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+}
