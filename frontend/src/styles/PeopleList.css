@@ -1,0 +1,65 @@
+.background {
+    background-image: url('../assets/ppl-bg-gradient.png'); /* Adjust the path as needed */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    height: 100vh; /* Full height of the viewport */
+    width: 100%; /* Full width of the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.title{
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-weight: 400;
+    font-size: 50px;
+    margin-top: 80px;
+    padding: 20px;
+}
+.people-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
+    padding: 20px;/* Optional: Add margin around the grid */
+    /* background-color: brown; */
+  }
+  
+  .person-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+    padding: 10px;
+    justify-content: space-evenly;
+  }
+  .person-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* background-color: blue; */
+    min-height: 120px;
+    min-width: 150px;
+  }
+  .person-info h3, .person-info p {
+    margin: 5px;
+}
+  .person-card img {
+    min-width: 75px;
+    min-height: 75px;
+    width: 50%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: Round the image */
+    margin-bottom: 10px; /* Optional: Add space between the image and text */
+  }
+
+  .linkedin-icon {
+    height: 30px;
+    width: auto;
+    margin-top: 10px;
+    opacity: 0.5;
+    color: black;
+  }
+
+  .person-info a{
+    text-decoration: none;
+  }

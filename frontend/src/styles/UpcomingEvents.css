@@ -1,0 +1,76 @@
+.upcoming-events {
+  background-color: red; /* Optional: background for the section */
+  padding: 20px; /* Optional: padding for aesthetics */
+  height: 100vh; /* Full height of the viewport */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  height: 100%; /* Use full height of the parent */
+  margin-top: 20px; /* Space between the title and the container */
+  background-color: white; /* Background color for the container */
+}
+
+.upcoming-events-left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the top */
+  flex: 1; /* Allow it to take up available space */
+  margin-right: 20px; /* Space between the list and the calendar */
+  padding: 20px; /* Add padding for spacing */
+  background-color: #f9f9f9; /* Light background color for contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.events-list {
+  flex: 1; /* Take available space */
+  overflow-y: auto; /* Allow vertical scrolling */
+  margin-top: 10px; /* Space between the heading and the list */
+}
+
+.calendar {
+  flex: 2; /* Allow the calendar to take more space than the events list */
+  height: 100%; /* Full height of the parent */
+  overflow: hidden;
+}
+
+.event-item {
+  background-color: #ffffff; /* White background for each event */
+  padding: 15px; /* Padding inside each event */
+  margin: 10px 0; /* Margin between events */
+  border-radius: 5px; /* Rounded corners for each event */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Shadow for each event */
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+  width: 100%; /* Ensure event items take full width */
+}
+
+.event-item:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.event-title {
+  font-size: 1.2em; /* Larger font size for the title */
+  font-weight: bold; /* Bold title */
+  color: #333; /* Darker color for contrast */
+  margin-bottom: 5px; /* Space between title and date */
+}
+
+.event-date {
+  font-size: 0.9em; /* Smaller font size for the date */
+  color: #777; /* Lighter color for the date */
+  margin-bottom: 5px; /* Space between date and description */
+}
+
+.event-description {
+  font-size: 0.85em; /* Description font size */
+  color: #555; /* Medium color for description */
+  margin-bottom: 5px; /* Space between description and location */
+}
+
+.event-location {
+  font-size: 0.8em; /* Font size for the location */
+  color: #444; /* Color for the location */
+}

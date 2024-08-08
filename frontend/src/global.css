@@ -1,0 +1,48 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffe5ec; 
+    /* makes bg pink too */
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #D8FAF5;
+}
+
+.content {
+    flex: 1; /* This makes the content area expand to fill available space */
+    padding: 20px;
+    
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #ffe5ec; /* Navbar color */
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding: 30px 0;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 3px solid #ffd0dcb9;
+}
+
+
+.footer {
+    border-top: 3px solid #ffd0dcb9;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffe5ec;
+    display: flex;
+    justify-content: flex-end;
+    height: 60px;
+    padding: 30px 0px;
+    align-items: center;
+}
