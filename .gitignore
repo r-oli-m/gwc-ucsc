@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# ignore my secrets in .env files
+.env
+
 # dependencies
 /node_modules
 /.pnp

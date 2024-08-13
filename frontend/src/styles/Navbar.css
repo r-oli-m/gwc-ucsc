@@ -5,8 +5,6 @@
 }
 
 .links a{
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     line-height: 46.5px;
     font-size: 24px;
@@ -23,11 +21,11 @@
 }
 
 .links a{
-    text-decoration: none;
     color: #6E7477;
     display: inline-block;
     position: relative;
     opacity: 0.75;
+    text-decoration: none; /* Remove underline from links */
 }
 
 .links a:hover {

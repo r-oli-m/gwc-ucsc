@@ -24,22 +24,33 @@ const PeopleList = () => {
     fetchPeople();
   }, []);
 
+  const imageUrl = (firstName, middleName, lastName) => {
+    const middlePart = middleName ? `${middleName}_` : '';
+    return `${process.env.PUBLIC_URL}/people/${firstName}_${middlePart}${lastName}.jpeg`;
+  };
+
   return (
     <div className="background">
-      <h1 className='title'>Our Team</h1>
+      <h1 className='ot-title'>Our Team</h1>
       <div className="people-list">
-        {people.map((person, index) => (
-          <div key={index} className="person-card">
-            <img src={person.imagePath} alt={person.name} />
-            <div className='person-info'>
-              <a href={person.linkedin} target="_blank">
-                <FaLinkedin className='linkedin-icon' />
-              </a>
-              <h3>{person.name}</h3>
-              <p>{person.role}</p>
+
+        {people.map((person, index) => {
+          const { firstName, middleName, lastName, role, linkedin } = person; // Destructure the properties
+          const fullName = `${firstName} ${middleName} ${lastName}`.trim(); // Construct full name
+
+          return (
+            <div key={index} className="person-card">
+              <img src={imageUrl(firstName, middleName, lastName)} alt={fullName} />
+              <div className='person-info'>
+                <a href={linkedin} target="_blank" rel="noreferrer">
+                  <FaLinkedin className='linkedin-icon' />
+                </a>
+                <h3>{fullName}</h3>
+                <p>{role}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

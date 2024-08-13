@@ -1,10 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 .about {
-    margin: 0;
+    padding: 20px; /* Optional: padding for aesthetics */
+    height: 60vh;
+    margin: 50px 100px;
+}
+
+.about-container {
     display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-    background-color: red;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* need heigh and width bef you can do alignmentt */
+}
+
+.left-container {
+    display: flex;
     flex-direction: column;
-    font-family: 'Poppins', sans-serif;
+    align-items: flex-start;
+    width: 65%;
+}
+
+.wwa-title {
+    align-self: flex-start;
+    margin-left: -20px;
+    color: #00B3A6;
+    font-size: 6em;
+    width: 100%;
+}
+
+.about-description {
+    color: #166A63;
+    text-align: left;
+    font-size: 2em;
+    line-height: 1.5;
+    margin-top: -50px;
+    margin-bottom: 40px;
+    width: 100%;
+    font-weight: 400;
+}
+
+.button {
+    background-color: black;
+    color: white;
+    padding: 20px 40px;
+    /* Adjust padding for a more balanced button */
+    border-radius: 130px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    /* Use relative font size for scalability */
+    cursor: pointer;
+    /* Change cursor to pointer for interactivity */
+    transition: background-color 0.3s;
+    /* Add transition for hover effect */
+}
+.right-image {
+    background-color: #00B3A6;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.right-image img {
+    width: 70%;
+    border-radius: 8px;
+}
+
+.button:hover {
+    background-color: #333;
+    /* Darker shade on hover */
 }

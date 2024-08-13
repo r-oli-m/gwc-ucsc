@@ -1,7 +1,26 @@
 .upcoming-events {
-  background-color: red; /* Optional: background for the section */
   padding: 20px; /* Optional: padding for aesthetics */
-  height: 100vh; /* Full height of the viewport */
+  height: 70vh;
+  margin: 0 100px;
+  margin-bottom: 500px;
+
+}
+
+.cal-title {
+  text-align: center;
+  color: #00B3A6;
+  font-size: 6em;
+  font-weight: 500;
+}
+
+.ue-title {
+  margin-top: 0;
+  align-self: center;
+  color: #166A63;
+  font-size: 4em;
+  text-decoration-line: underline;
+  text-underline-offset: 60px;
+  font-weight: 600;
 }
 
 .container {
@@ -10,25 +29,26 @@
   align-items: flex-start; /* Align items to the top */
   height: 100%; /* Use full height of the parent */
   margin-top: 20px; /* Space between the title and the container */
-  background-color: white; /* Background color for the container */
 }
 
 .upcoming-events-left-container {
   display: flex;
   flex-direction: column;
+  flex: 1; /* Take available space */
   align-items: flex-start; /* Align items to the top */
   flex: 1; /* Allow it to take up available space */
   margin-right: 20px; /* Space between the list and the calendar */
-  padding: 20px; /* Add padding for spacing */
-  background-color: #f9f9f9; /* Light background color for contrast */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  height: 100%; /* Full height of the parent */
 }
 
 .events-list {
-  flex: 1; /* Take available space */
-  overflow-y: auto; /* Allow vertical scrolling */
+  max-height: fit-content;
+  overflow-y: auto;
   margin-top: 10px; /* Space between the heading and the list */
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+  width: 90%;
+  align-self: center;
 }
 
 .calendar {
@@ -38,6 +58,7 @@
 }
 
 .event-item {
+  text-align: center;
   background-color: #ffffff; /* White background for each event */
   padding: 15px; /* Padding inside each event */
   margin: 10px 0; /* Margin between events */

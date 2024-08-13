@@ -1,11 +1,75 @@
-.contact{
-    margin: 0;
+.contact {
     display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-    gap: 20px;
-    background-color: #F4FBEF;
     flex-direction: column;
-    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    align-content: center;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 70px;
+    background-color: #fff2f2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.App {
+    width: 100%;
+}
+
+#contact-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.form-control {
+    width: 90%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.btn {
+    background-color: rgb(2, 151, 151);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: rgb(1, 65, 65)
+}
+
+.btn:focus {
+    outline: none;
 }
