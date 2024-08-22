@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const About = () => {
   const navigate = useNavigate();
+  
   const handleClick = () => {
     console.log('Button clicked');
     navigate('/people');

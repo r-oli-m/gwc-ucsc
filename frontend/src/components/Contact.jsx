@@ -29,7 +29,7 @@ const Contact = () => {
         setMessage('');
         // Optionally, show a success message to the user
       } else {
-        console.error('Error sending email');
+      console.error('Error sending email');
       }
     })
     .catch(error => {
@@ -61,13 +61,12 @@ const Contact = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)} // Update state on change
             />
-          </div>
-          <div className="form-group">
+          </div><div className="form-group">
             <label htmlFor="message">Message</label>
             <textarea
               className="form-control"
               rows="5"
-              value={message}
+            value={message}
               onChange={(e) => setMessage(e.target.value)} // Update state on change
             />
           </div>
