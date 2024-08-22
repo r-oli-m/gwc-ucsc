@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const Welcome = () => {
   const settings = {
     dots: true,
+    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -55,13 +56,15 @@ const Welcome = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Cursus imperdiet sed id elementum. Quam vel aliquam sit vulputate.
       </h3>
-      <Slider {...settings}>
-        {images.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={`slide-${index}`} className="carousel-image" />
-          </div>
-        ))}
-      </Slider>
+      <div className="custom-slider-container">
+        <Slider {...settings}>
+          {images.map((image, index) => (
+            <div key={index}>
+              <img src={image} alt={`slide-${index}`} className="carousel-image" />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

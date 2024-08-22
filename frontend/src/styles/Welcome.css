@@ -24,38 +24,42 @@
     font-size: 20px;
     font-weight: 400;
     text-align: center;
-    margin-bottom: 50px;
     overflow: hidden; 
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-}
-.carousel-image {
-    border: 3px;
-    transition: box-shadow 0.3s ease;
-    object-fit: cover;
 }
 
-
-.slick-slider {
+.custom-slider-container {
     width: 80%;
+    height: 300px;
     margin: 0 auto;
-    border: red 3px solid;
     border-radius: 40px;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #e0f7fa, #00B3A6);
 }
 
+.custom-slider-container .slick-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
 
-@media screen and (max-width: 768px) {
-    .title {
-        font-size: 40px;
+.custom-slider-container .slick-slide img:hover {
+    transform: scale(1.05);
+}
+
+.title, .welcome-description {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    .welcome-description {
-        width: 80%;
-        font-size: 18px;
-    }
-    .carousel-image {
-        height: 30vh;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
