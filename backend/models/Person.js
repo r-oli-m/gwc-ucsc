@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 
 const personSchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  time: {type: Date, required: true},
+  email: { type: String, required: true },
+  firstName: { type: String, required: true },
+  middleName: { type: String, required: false },
+  lastName: { type: String, required: true },
+  profilePic: { type: String, required: true },
   role: { type: String, required: true },
-  linkedin: { type: String, required: true },
-  imagePath: { type: String, required: true }, // If you decide to store image paths
+  linkedin: { type: String, required: true }
 });
 
-const Person = mongoose.model('Person', personSchema);
+const Person = mongoose.model('Person', personSchema, 'profile_records');
 
 module.exports = Person;

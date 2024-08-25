@@ -1,63 +1,71 @@
-require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const Person = require('./models/Person');
 const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
-const cors = require('cors'); // Import CORS
+const cors = require('cors');
 
-const app = express(); // Initialize Express app
+const app = express();
 const PORT = process.env.PORT || 5001;
 
 // Middleware
-app.use(cors({
-  origin: 'http://localhost:3000', // Replace with your frontend URL
-}));
-app.use(bodyParser.json()); // Middleware to parse JSON
-app.use(express.json()); // This is redundant since body-parser is already being used
+app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(express.json());
 
 // Connect to MongoDB
-const uri = process.env.ATLAS_URI; // Moved to this position for clarity
-mongoose.connect(uri)
+mongoose.connect(process.env.ATLAS_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB connection error:", err));
 
+
 // Endpoint to get all people
+// app.get('/people', async (req, res) => {
+//   try {
+//     const people = await Person.find();
+//     res.json(people);
+//   } catch (error) {
+//     console.error('Error retrieving people:', error);
+//     res.status(500).json({ message: 'Error retrieving people', error });
+//   }
+// });
 app.get('/people', async (req, res) => {
   try {
-    const people = await Person.find();
+    const people = await mongoose.connection.db.collection('profile_records').find().toArray(); // Direct MongoDB query
+    console.log(people); // This should show your existing data
     res.json(people);
   } catch (error) {
+    console.error('Error retrieving people:', error);
     res.status(500).json({ message: 'Error retrieving people', error });
   }
 });
 
+
 // Email backend
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // or your email service
+  service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Your email
-    pass: process.env.EMAIL_PASS, // Your email password or app-specific password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   }
 });
 
-// Endpoint to send email
-app.post('/send-email', (req, res) => {
+app.post('/send-email', async (req, res) => {
   const { name, email, message } = req.body;
 
   const mailOptions = {
-    from: email, // Sender's email
-    to: process.env.EMAIL_USER, // Destination email
+    from: email,
+    to: process.env.EMAIL_USER,
     subject: `Contact Form Submission from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return res.status(500).send(error.toString());
-    }
+  try {
+    const info = await transporter.sendMail(mailOptions);
     res.status(200).send('Email sent: ' + info.response);
-  });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).send(error.toString());
+  }
 });
 
 // Start the server

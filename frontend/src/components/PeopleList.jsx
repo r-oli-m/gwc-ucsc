@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../styles/PeopleList.css';
 import { FaLinkedin } from "react-icons/fa";
 
-
 const PeopleList = () => {
   const [people, setPeople] = useState([]);
 
@@ -24,23 +23,17 @@ const PeopleList = () => {
     fetchPeople();
   }, []);
 
-  const imageUrl = (firstName, middleName, lastName) => {
-    const middlePart = middleName ? `${middleName}_` : '';
-    return `${process.env.PUBLIC_URL}/people/${firstName}_${middlePart}${lastName}.jpeg`;
-  };
-
   return (
     <div className="background">
       <h1 className='ot-title'>Our Team</h1>
       <div className="people-list">
-
         {people.map((person, index) => {
-          const { firstName, middleName, lastName, role, linkedin } = person; // Destructure the properties
+          const { firstName, middleName, lastName, profilePic, role, linkedin } = person; // Destructure the properties
           const fullName = `${firstName} ${middleName} ${lastName}`.trim(); // Construct full name
 
           return (
             <div key={index} className="person-card">
-              <img src={imageUrl(firstName, middleName, lastName)} alt={fullName} />
+              <img src={profilePic} alt={fullName} /> {/* Use the profilePic field directly */}
               <div className='person-info'>
                 <a href={linkedin} target="_blank" rel="noreferrer">
                   <FaLinkedin className='linkedin-icon' />
