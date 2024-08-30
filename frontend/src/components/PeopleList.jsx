@@ -31,7 +31,7 @@ const PeopleList = () => {
   
 
   return (
-    <div className="background">
+    <div>
       <h1 className='ot-title'>Our Team</h1>
       <div className="people-list">
         {people.map((person, index) => {

@@ -12,6 +12,7 @@ import PeopleList from './components/PeopleList';
 import "./global.css";
 
 const App = () => {
+
   return (
     <div className="page-container">
       <Router>

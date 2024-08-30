@@ -40,7 +40,7 @@ const Contact = () => {
 
   return (
     <div className='contact'>
-      <h1>Contact Component</h1>
+      <h1>Contact Us</h1>
       <div className="App">
         <form id="contact-form" onSubmit={handleSubmit} method="POST">
           <div className="form-group">
