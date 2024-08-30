@@ -23,6 +23,13 @@ const PeopleList = () => {
     fetchPeople();
   }, []);
 
+  const convertGoogleDriveLink = (driveLink) => {
+    const fileId = driveLink.split('id=')[1];
+    console.log(`https://drive.google.com/uc?id=${fileId}`);
+    return `https://drive.google.com/uc?id=${fileId}`;
+  };
+  
+
   return (
     <div className="background">
       <h1 className='ot-title'>Our Team</h1>
@@ -30,10 +37,10 @@ const PeopleList = () => {
         {people.map((person, index) => {
           const { firstName, middleName, lastName, profilePic, role, linkedin } = person; // Destructure the properties
           const fullName = `${firstName} ${middleName} ${lastName}`.trim(); // Construct full name
-
+          const imageUrl = convertGoogleDriveLink(profilePic);
           return (
             <div key={index} className="person-card">
-              <img src={profilePic} alt={fullName} /> {/* Use the profilePic field directly */}
+              <img src="https://drive.google.com/uc?id=1oImVx4kGOdKEnEi_cKk4Gxr5Sm-6aqs1"alt={fullName} /> {/* Use the profilePic field directly */}
               <div className='person-info'>
                 <a href={linkedin} target="_blank" rel="noreferrer">
                   <FaLinkedin className='linkedin-icon' />

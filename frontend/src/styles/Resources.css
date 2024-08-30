@@ -8,3 +8,28 @@
     background-color: #F4FBEF;
     flex-direction: column;
 }
+.boxes-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 75vw;
+    padding: 20px;
+}
+.box{
+    height: 300px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: space-between;
+    border: black 1px solid;
+    border-radius: 20px;
+    padding: 0 20px;
+    /* text-align: center; */
+    align-items: center;
+    justify-content: space-between;
+    background-color: #E7E5E5;
+}
+.custom-icon{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
