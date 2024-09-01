@@ -55,6 +55,7 @@ const Welcome = () => {
       <h3 className="welcome-description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Cursus imperdiet sed id elementum. Quam vel aliquam sit vulputate.
+        Imperdiet sed id elementum. Quam vel aliquam sit vulputate ipsum dolor sit.
       </h3>
       <div className="custom-slider-container">
         <Slider {...settings}>

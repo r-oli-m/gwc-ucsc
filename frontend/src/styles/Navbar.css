@@ -1,31 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
 
-.links {
+.links{
+    height: 100%;
     display: flex;
+    align-items: stretch;
 }
 
 .links a{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
     font-weight: 400;
-    line-height: 46.5px;
     font-size: 24px;
-    position: left;
     color: #6E7477;
     padding: 0 40px;
-    position: relative;
-
+    opacity: 0.75;
+    text-decoration: none;
 }
 
 .logo img{
     margin-left: 40px;
     height: 80px;
-}
-
-.links a{
-    color: #6E7477;
-    display: inline-block;
-    position: relative;
-    opacity: 0.75;
-    text-decoration: none; /* Remove underline from links */
 }
 
 .links a:hover {
@@ -36,13 +34,24 @@
     content: "";
     position: absolute;
     left: 25%;
-    bottom: -5px;
+    bottom: 38px;
     width: 0;
     height: 5px;
     background-color: #6E7477;
-    transition: width 0.3s ease;
+    transition: width 0.5s ease;
 }
 
 .links a:hover::after {
     width: 50%;
 }
+
+.links a.active {
+    transition: 0.3s ease-in-out;
+    background-color: #0C6B68;
+    color: white;
+    opacity: 1;
+}
+.links a.active::after {
+    background-color: transparent;
+}
+/* dont want to see any lines under active page */

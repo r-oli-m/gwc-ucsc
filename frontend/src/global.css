@@ -26,11 +26,10 @@ html, body {
     background-color: #ffe5ec; /* Navbar color */
     display: flex;
     justify-content: space-between;
-    height: 60px;
-    padding: 30px 0;
     align-items: center;
+    height: 120px;
     z-index: 1000;
-    border-bottom: 3px solid #ffd0dcb9;
+    border-bottom: 1px solid #0C6B68;
     text-decoration: none; /* Remove underline from links */
     font-family: 'Poppins', sans-serif; /*all fonts defaulted to poppins*/
 }
@@ -49,18 +48,13 @@ html, body {
     margin-top: auto;
 }
 
-.people-page {
-    background-image: url('./assets/ppl-bg-gradient.png');
-  /* Adjust the path as needed */
-  background-size: cover;
-  /* Ensures the image covers the entire area */
-  background-position: center;
-  /* Centers the image */
-  width: 100%;
-  /* Full width of the container */
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+.page-container.people-page {
+    background: linear-gradient(to bottom, #FFE5B4, #EBFFE1) !important; /* Adjust colors and direction as needed */
+    height: 100vh; /* Adjust height as needed */
+    width: 100%; /* Full width */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
   }
   
   

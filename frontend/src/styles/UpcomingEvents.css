@@ -40,6 +40,7 @@
   margin-right: 20px; /* Space between the list and the calendar */
   border-radius: 10px; /* Rounded corners */
   height: 100%; /* Full height of the parent */
+  padding-right: 20px;
 }
 
 .events-list {
@@ -59,13 +60,12 @@
 
 .event-item {
   text-align: center;
-  background-color: #ffffff; /* White background for each event */
+  background-color: rgb(255, 255, 255); /* White background for each event */
   padding: 15px; /* Padding inside each event */
   margin: 10px 0; /* Margin between events */
-  border-radius: 5px; /* Rounded corners for each event */
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Shadow for each event */
+  border-radius: 15px; /* Rounded corners for each event */
+  box-shadow: 0 1px 4px rgba(67, 214, 185, 0.9); /* Shadow for each event */
   transition: transform 0.2s; /* Smooth transition for hover effect */
-  width: 100%; /* Ensure event items take full width */
 }
 
 .event-item:hover {

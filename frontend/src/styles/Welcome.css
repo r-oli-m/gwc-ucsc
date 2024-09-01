@@ -5,15 +5,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 100vh;
-    gap: 20px;
+    gap: 10px;
     font-family: 'Poppins', sans-serif;
 }
 
 .title {
     font-weight: 900;
-    font-size: 60px;
+    font-size: 120px;
     color: #00B3A6;
     text-align: center;
 }
@@ -31,7 +30,6 @@
 .custom-slider-container {
     width: 80%;
     height: 300px;
-    margin: 0 auto;
     border-radius: 40px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

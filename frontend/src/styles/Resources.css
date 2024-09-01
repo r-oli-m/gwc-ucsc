@@ -1,5 +1,4 @@
 .resources{
-    margin: 0;
     display: flex;
     place-items: center;
     min-width: 320px;
@@ -15,18 +14,19 @@
     padding: 20px;
 }
 .box{
+    color: rgb(48, 50, 50);
     height: 300px;
     width: 400px;
     display: flex;
     flex-direction: column;
     gap: space-between;
-    border: black 1px solid;
+    border: rgba(12, 107, 104) 1px solid;
     border-radius: 20px;
     padding: 0 20px;
     /* text-align: center; */
     align-items: center;
     justify-content: space-between;
-    background-color: #E7E5E5;
+    background-color: rgba(13, 156, 144, 0.5);
 }
 .custom-icon{
     font-size: 50px;
