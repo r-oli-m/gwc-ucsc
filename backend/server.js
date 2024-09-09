@@ -4,13 +4,14 @@ const mongoose = require('mongoose');
 const Person = require('./models/Person');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-
+  
 const app = express();
 const PORT = process.env.PORT || 5001;
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:3000' }));
-app.use(express.json());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://r-oli-m.github.io']
+}));app.use(express.json());
 
 // Connect to MongoDB
 mongoose.connect(process.env.ATLAS_URI)
