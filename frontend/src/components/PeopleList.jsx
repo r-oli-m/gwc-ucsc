@@ -17,7 +17,7 @@ const PeopleList = () => {
     const fetchPeople = async () => {
       try {
         // Use full URL to fetch data from the backend
-        const response = await fetch('http://localhost:5001/people');
+        const response = await fetch('https://gwc-ucsc-github-io.onrender.com/people');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
