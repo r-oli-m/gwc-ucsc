@@ -1,64 +1,101 @@
+/* Title styling */
 .ot-title {
   text-align: center;
-  text-decoration: none;
   font-family: 'Poppins', sans-serif;
   color: black;
   font-weight: 400;
-  font-size: 80px;
-  margin-top: 80px;
+  font-size: clamp(32px, 8vw, 80px); /* Responsive font size */
+  margin-top: 50px;
   padding: 20px;
 }
 
+/* Main container for people */
 .people-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row on large screens */
+  gap: 40px; /* Gap between cards */
+  padding: 40px;
+  justify-items: center; /* Center cards */
 }
 
+/* Individual person card */
 .person-card {
+  width: 250px; /* Set fixed width */
+  height: auto; /* Auto height */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px;
-  justify-content: space-evenly;
-  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevent content from overflowing */
+  justify-content: space-between; /* Evenly distribute content */
 }
 
-.person-info {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  /* background-color: blue; */
-  min-height: 120px;
-  min-width: 150px;
+/* Hover effect */
+.person-card:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
-.person-info h3,
-.person-info p {
-  margin: 5px;
-}
-
+/* Profile image styling */
 .person-card img {
-  width: 300px;
-  /* Set width to 70px */
-  height: 300px;
-  /* Set height equal to width */
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  /* Make the image round */
   object-fit: cover;
-  /* Ensure the image covers the entire area */
   margin-bottom: 10px;
-  /* Add space between the image and text */
 }
 
+/* Person info */
+.person-info {
+  text-align: center;
+}
+
+.person-info h3 {
+  font-size: 1.25em;
+  margin: 10px 0 5px;
+}
+
+.person-info p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* LinkedIn icon styling */
 .linkedin-icon {
-  height: 30px;
-  width: auto;
+  height: 25px;
+  width: 25px;
   margin-top: 10px;
-  opacity: 0.5;
-  color: black;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+color: rgb(12, 107, 104);}
+
+.linkedin-icon:hover {
+  opacity: 1;
 }
 
-.person-info a {
-  text-decoration: none;
+/* Responsive Grid Layout */
+@media (max-width: 1200px) {
+  .people-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .people-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .people-list {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+
+  .person-card {
+    width: 100%; /* Make cards take full width on small screens */
+    height: auto; /* Auto height for smaller screens */
+  }
 }

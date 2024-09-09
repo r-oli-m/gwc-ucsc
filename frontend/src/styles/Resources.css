@@ -1,34 +1,88 @@
-.resources{
+/* Main Resources Container */
+.resources {
     display: flex;
-    place-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-width: 320px;
     min-height: 100vh;
-    gap: 20px;
-    flex-direction: column;
-}
-.boxes-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 75vw;
+    gap: 40px; /* Increased gap for better spacing */
     padding: 20px;
+    background-color: #f9f9f9; /* Soft background for better contrast */
 }
-.box{
-    color: rgb(48, 50, 50);
-    height: 300px;
-    width: 400px;
+
+/* Boxes container using grid for better layout */
+.boxes-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Default to 2 boxes per row */
+    gap: 50px; /* Gap between boxes */
+    width: 100%;
+    max-width: 1200px; /* Limit max width for larger screens */
+    justify-items: center;
+}
+
+/* Individual Box Styling */
+.box {
+    color: #303232;
+    height: 280px;
+    width: 100%; /* Make the boxes responsive */
+    max-width: 350px; /* Limit the box width */
     display: flex;
     flex-direction: column;
-    gap: space-between;
-    border: rgba(12, 107, 104) 1px solid;
+    gap: 20px;
+    border: 2px solid rgba(12, 107, 104, 0.5); /* Slightly bolder border */
     border-radius: 20px;
-    padding: 0 20px;
-    /* text-align: center; */
+    padding: 20px;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(13, 156, 144, 0.5);
+    background-color: rgba(13, 156, 144, 0.3); /* Softer background color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.custom-icon{
-    font-size: 50px;
+
+/* Box Title */
+.box h1 {
+    font-size: 1.8rem;
+    color: #0c6b68;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Hover effect on boxes */
+.box:hover {
+    transform: translateY(-10px); /* More noticeable lift effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Softer shadow */
+}
+
+/* Custom Icon Styling */
+.custom-icon {
+    font-size: 40px;
     margin-bottom: 20px;
+    color: #0c6b68;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .boxes-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 boxes per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .boxes-container {
+        grid-template-columns: 1fr; /* 1 box per row on smaller screens */
+        gap: 30px;
+    }
+
+    .box {
+        height: auto; /* Adjust box height on smaller screens */
+        max-width: 100%; /* Full width on small screens */
+    }
+
+    .custom-icon {
+        font-size: 35px; /* Slightly reduce icon size */
+    }
+
+    .box h1 {
+        font-size: 1.5rem; /* Adjust title size for smaller screens */
+    }
 }

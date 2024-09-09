@@ -36,14 +36,24 @@ const PeopleList = () => {
       <h1 className='ot-title'>Our Team</h1>
       <div className="people-list">
         {people.map((person, index) => {
-          const { firstName, middleName, lastName, role, linkedin } = person; // Destructure the properties
+          // Access the fields with bracket notation
+          const firstName = person['First Name'];
+          const middleName = person['Middle Name (leave blank if none)'] || ''; // Fallback for empty middle name
+          const lastName = person['Last Name'];
+          const role = person['Role (Member or specify Officer role)'];
+          const linkedin = person['LinkedIn URL'];
+
           const fullName = `${firstName} ${middleName} ${lastName}`.trim(); // Construct full name
-          const imageFileName = `${firstName}_${lastName}.jpeg`;
-          const imageUrl = images[imageFileName] || ''; // Use default image if not found
+          const imageFileNameJpeg = `${firstName}_${lastName}.jpeg`;
+          const imageFileNameJpg = `${firstName}_${lastName}.jpg`;
+
+          // Check for .jpeg or .jpg version of the image
+          const imageUrl = images[imageFileNameJpeg] || images[imageFileNameJpg] || '/blank_profile_picture.png'; // Use default image if not found
 
           return (
             <div key={index} className="person-card">
-              <img src={imageUrl} alt={fullName} />
+              <img src={imageUrl} alt={fullName} onError={(e) => { e.target.src = '/blank_profile_picture.png'; }} // Fallback to blank image on error
+              />
               <div className='person-info'>
                 <a href={linkedin} target="_blank" rel="noreferrer">
                   <FaLinkedin className='linkedin-icon' />

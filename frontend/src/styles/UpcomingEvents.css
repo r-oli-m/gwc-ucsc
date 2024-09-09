@@ -1,97 +1,143 @@
+/* Main container styling */
 .upcoming-events {
-  padding: 20px; /* Optional: padding for aesthetics */
-  height: 70vh;
-  margin: 0 100px;
-  margin-bottom: 500px;
-
+  padding: 20px;
+  margin: 0 20px;
+  margin-bottom: 100px;
 }
 
+/* Calendar title */
 .cal-title {
   text-align: center;
-  color: #00B3A6;
-  font-size: 6em;
+  color: #00B3A6; /* Accent color */
+  font-size: clamp(2.5rem, 5vw, 6rem);
   font-weight: 500;
+  margin-bottom: 30px;
 }
 
-.ue-title {
-  margin-top: 0;
-  align-self: center;
-  color: #166A63;
-  font-size: 4em;
-  text-decoration-line: underline;
-  text-underline-offset: 60px;
-  font-weight: 600;
-}
-
+/* Container for events and calendar */
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Align items to the top */
-  height: 100%; /* Use full height of the parent */
-  margin-top: 20px; /* Space between the title and the container */
+  gap: 20px;
+  height: 550px;
+  padding: 10px;
 }
 
+/* Left-side container for upcoming events */
 .upcoming-events-left-container {
   display: flex;
   flex-direction: column;
-  flex: 1; /* Take available space */
-  align-items: flex-start; /* Align items to the top */
-  flex: 1; /* Allow it to take up available space */
-  margin-right: 20px; /* Space between the list and the calendar */
-  border-radius: 10px; /* Rounded corners */
-  height: 100%; /* Full height of the parent */
-  padding-right: 20px;
+  justify-content: space-between;
+  height: 100%; /* Match height with calendar */
+  background-color: #FFF; /* White background for contrast */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  padding: 15px;
 }
 
-.events-list {
-  max-height: fit-content;
-  overflow-y: auto;
-  margin-top: 10px; /* Space between the heading and the list */
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  width: 90%;
-  align-self: center;
-}
-
-.calendar {
-  flex: 2; /* Allow the calendar to take more space than the events list */
-  height: 100%; /* Full height of the parent */
-  overflow: hidden;
-}
-
-.event-item {
+/* Upcoming events title */
+.ue-title {
+  color: #166A63; /* Darker accent color */
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  text-decoration: underline;
+  font-weight: 600;
   text-align: center;
-  background-color: rgb(255, 255, 255); /* White background for each event */
-  padding: 15px; /* Padding inside each event */
-  margin: 10px 0; /* Margin between events */
-  border-radius: 15px; /* Rounded corners for each event */
-  box-shadow: 0 1px 4px rgba(67, 214, 185, 0.9); /* Shadow for each event */
-  transition: transform 0.2s; /* Smooth transition for hover effect */
+  margin-bottom: 10px;
+}
+
+/* Scrollable events list for large screens */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #FFF; /* White background for event cards */
+  border-radius: 10px;
+}
+
+/* Individual event item */
+.event-item, .event-item-single-event {
+  text-align: center;
+  background-color: #FFFFFF;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); /* Slight shadow to elevate */
+  transition: transform 0.2s ease-in-out;
 }
 
 .event-item:hover {
-  transform: translateY(-2px); /* Slight lift on hover */
+  transform: translateY(-5px); /* Slight lift effect on hover */
 }
 
-.event-title {
-  font-size: 1.2em; /* Larger font size for the title */
-  font-weight: bold; /* Bold title */
-  color: #333; /* Darker color for contrast */
-  margin-bottom: 5px; /* Space between title and date */
+/* Full calendar container */
+.calendar-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 15px;
 }
 
-.event-date {
-  font-size: 0.9em; /* Smaller font size for the date */
-  color: #777; /* Lighter color for the date */
-  margin-bottom: 5px; /* Space between date and description */
+/* Calendar iframe */
+.calendar {
+  width: 100%;
+  height: 500px;
 }
 
-.event-description {
-  font-size: 0.85em; /* Description font size */
-  color: #555; /* Medium color for description */
-  margin-bottom: 5px; /* Space between description and location */
+/* Share calendar button */
+.calendar-share-btn {
+  background-color: #00B3A6;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
-.event-location {
-  font-size: 0.8em; /* Font size for the location */
-  color: #444; /* Color for the location */
+.calendar-share-btn:hover {
+  background-color: #166A63;
+}
+.event-navigation-container{
+  display: none;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 1024px) {
+  .events-list {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendar {
+    display: none;
+  }
+  .calendar-container, .upcoming-events-left-container {
+    padding: 0;
+    background-color: transparent;
+    height: fit-content;
+    box-shadow: none;
+  }
+  .calendar-share-btn {
+    display: block;
+  }
+
+  .event-navigation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
 }

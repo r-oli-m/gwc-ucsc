@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../styles/Contact.css';
-import InstagramEmbed from './InstagramProfile';
 
 const Contact = () => {
   // State variables for name, email, and message
@@ -8,10 +7,10 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  // Handle form submission, connected to backend
+  // Handle form submission
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission
-    
+    event.preventDefault();
+
     // Send form data to the backend
     fetch('http://localhost:5001/send-email', {
       method: 'POST',
@@ -20,28 +19,27 @@ const Contact = () => {
       },
       body: JSON.stringify({ name, email, message }),
     })
-    .then(response => {
-      if (response.ok) {
-        console.log('Email sent successfully');
-        // Reset form fields
-        setName('');
-        setEmail('');
-        setMessage('');
-        // Optionally, show a success message to the user
-      } else {
-      console.error('Error sending email');
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+      .then(response => {
+        if (response.ok) {
+          console.log('Email sent successfully');
+          // Reset form fields
+          setName('');
+          setEmail('');
+          setMessage('');
+        } else {
+          console.error('Error sending email');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   };
-  
+
 
   return (
     <div className='contact'>
-      <h1>Contact Us</h1>
-      <div className="App">
+      <div className="form-container">
+        <h1>Contact Us</h1>
         <form id="contact-form" onSubmit={handleSubmit} method="POST">
           <div className="form-group">
             <label htmlFor="name">Name</label>
@@ -49,7 +47,7 @@ const Contact = () => {
               type="text"
               className="form-control"
               value={name}
-              onChange={(e) => setName(e.target.value)} // Update state on change
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="form-group">
@@ -59,18 +57,19 @@ const Contact = () => {
               className="form-control"
               aria-describedby="emailHelp"
               value={email}
-              onChange={(e) => setEmail(e.target.value)} // Update state on change
+              onChange={(e) => setEmail(e.target.value)}
             />
-          </div><div className="form-group">
+          </div>
+          <div className="form-group">
             <label htmlFor="message">Message</label>
             <textarea
               className="form-control"
               rows="5"
-            value={message}
-              onChange={(e) => setMessage(e.target.value)} // Update state on change
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn">Submit</button>
         </form>
       </div>
     </div>

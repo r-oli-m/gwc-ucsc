@@ -1,57 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
-
-.links{
-    height: 100%;
-    display: flex;
-    align-items: stretch;
-}
-
-.links a{
-    display: inline-block;
-    position: relative;
+/* Navbar styling */
+.navbar {
+    position: sticky;
+    top: 0;
     width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-content: center;
-    font-weight: 400;
-    font-size: 24px;
-    color: #6E7477;
-    padding: 0 40px;
-    opacity: 0.75;
-    text-decoration: none;
+    background-color: #fff;
+    height: auto;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-.logo img{
-    margin-left: 40px;
+/* Left side with logo and mascot */
+.left-side {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
     height: 80px;
+    width: auto;
+}
+
+.mascot-img {
+    height: 80px;
+    width: auto;
+    margin-left: 10px;
+}
+
+/* Navbar links */
+.links {
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+    transition: all 0.3s ease;
+}
+
+.links a {
+    font-size: 1.3rem;
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, background 0.3s ease;
 }
 
 .links a:hover {
-    opacity: 1;
+    color: #0C6B68;
+    background-color: #f0f0f0;
+    border-radius: 5px;
 }
 
-.links a::after {
-    content: "";
-    position: absolute;
-    left: 25%;
-    bottom: 38px;
-    width: 0;
-    height: 5px;
-    background-color: #6E7477;
-    transition: width 0.5s ease;
+/* Hamburger menu icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #333;
+    margin-right: 3rem;
+    z-index: 1100;
 }
 
-.links a:hover::after {
-    width: 50%;
+/* Sliding menu for mobile (hidden by default) */
+.links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 80%;
+    background-color: #fff;
+    z-index: 1100;
+    padding-top: 80px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(0);
+    transition: transform 0.3s ease;
 }
 
-.links a.active {
-    transition: 0.3s ease-in-out;
-    background-color: #0C6B68;
-    color: white;
-    opacity: 1;
+/* Default state for links in large screens */
+.links {
+    transform: none;
 }
-.links a.active::after {
-    background-color: transparent;
+
+/* Show hamburger menu on smaller screens */
+@media (max-width: 1024px) {
+    .hamburger {
+        display: block;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .navbar.active .links {
+        display: flex;
+    }
 }
-/* dont want to see any lines under active page */
+
+/* Hide the mobile menu when screen size increases */
+@media (min-width: 1025px) {
+    .links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}

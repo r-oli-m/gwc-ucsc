@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { initClient, listUpcomingEvents } from './googleApi';
 import '../styles/UpcomingEvents.css';
-import 'react-calendar/dist/Calendar.css';
+import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
 
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([]);
-  const calendarEmbed = `<iframe src="https://calendar.google.com/calendar/embed?src=b9543132592733d502fbaea4d0b8307a9f277c0f1632f03bf7855ca6588c3047%40group.calendar.google.com&ctz=America%2FLos_Angeles&showTime=0" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>`;
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+
+  const calendarLink = "https://calendar.google.com/calendar/embed?src=b9543132592733d502fbaea4d0b8307a9f277c0f1632f03bf7855ca6588c3047%40group.calendar.google.com&ctz=America%2FLos_Angeles&showTime=0";
 
   useEffect(() => {
     initClient()
@@ -24,8 +26,8 @@ const UpcomingEvents = () => {
           id: event.id,
           summary: event.summary,
           start: formatEventDate(event.start.dateTime || event.start.date),
-          location: truncateLocation(event.location), // Handle missing location
-          description: event.description || 'No description provided' // Handle missing description
+          location: truncateLocation(event.location),
+          description: event.description || 'No description provided'
         }));
         setEvents(eventItems);
       })
@@ -40,44 +42,82 @@ const UpcomingEvents = () => {
     const minutes = date.getMinutes();
     const ampm = hours >= 12 ? 'pm' : 'am';
     const formattedTime = `${hours % 12 || 12}${minutes === 0 ? '' : `:${minutes.toString().padStart(2, '0')}`} ${ampm}`;
-
     const day = date.getDate();
-    const month = date.getMonth() + 1; // Months are zero-based
+    const month = date.getMonth() + 1;
     const year = date.getFullYear();
-
     const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const dayOfWeek = daysOfWeek[date.getDay()];
-
     return `${formattedTime} → ${month}/${day}/${year} (${dayOfWeek})`;
   };
 
-
   const truncateLocation = (location) => {
-    if (!location) return 'No location provided'; // Handle empty location
-    let lastCommaIndex = location.length - 15; // Truncate the last 15 characters ', CA 95064, USA' )
+    if (!location) return 'No location provided';
+    let lastCommaIndex = location.length - 15;
     return location.substring(0, lastCommaIndex);
   };
-  
 
+  const handleNextEvent = () => {
+    setCurrentEventIndex((prevIndex) => (prevIndex + 1) % events.length);
+  };
+
+  const handlePreviousEvent = () => {
+    if (currentEventIndex > 0) {
+      setCurrentEventIndex((prevIndex) => (prevIndex - 1));
+    }
+  };
+
+  const openCalendarInNewTab = () => {
+    window.open(calendarLink, '_blank');
+  };
 
   return (
     <div className='upcoming-events'>
       <h1 className='cal-title'>Calendar</h1>
       <div className="container">
+        
+        {/* Scrollable list of events for large screens */}
         <div className="upcoming-events-left-container">
           <h2 className='ue-title'>Upcoming Events</h2>
-          <div className="events-list">
-            {events.map((event, index) => (
-              <div key={index} className="event-item">
-                <h3 className="event-title">{event.summary}</h3>
-                <p className="event-date">{event.start}</p>
-                <p className="event-description">{event.description}</p>
-                <p className="event-location"> <i>{event.location}</i></p>
-              </div>
-            ))}
-          </div>
+
+          {events.length > 0 && (
+            <div className="events-list">
+              {/* For larger screens: render all events */}
+              {events.map((event, index) => (
+                <div key={index} className="event-item">
+                  <h3 className="event-title">{event.summary}</h3>
+                  <p className="event-date">{event.start}</p>
+                  <p className="event-description">{event.description}</p>
+                  <p className="event-location"><i>{event.location}</i></p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-        <div className="calendar" dangerouslySetInnerHTML={{ __html: calendarEmbed }} />
+
+        {/* Event navigation for smaller screens */}
+        {events.length > 0 && (
+          <div className="event-navigation-container">
+            <div className="event-item-single-event">
+              <h3 className="event-title">{events[currentEventIndex].summary}</h3>
+              <p className="event-date">{events[currentEventIndex].start}</p>
+              <p className="event-description">{events[currentEventIndex].description}</p>
+              <p className="event-location"><i>{events[currentEventIndex].location}</i></p>
+            </div>
+            <div className="event-navigation">
+              {currentEventIndex > 0 && (
+                <IoIosArrowDropleft onClick={handlePreviousEvent} className="nav-arrow" />
+              )}
+              {currentEventIndex < events.length - 1 && (
+                <IoIosArrowDropright onClick={handleNextEvent} className="nav-arrow" />
+              )}
+            </div>
+          </div>
+        )}
+
+        <div className="calendar-container">
+          <div className="calendar" dangerouslySetInnerHTML={{ __html: `<iframe src="${calendarLink}" style="border: 0" width="100%" height="110%" frameborder="0" scrolling="no"></iframe>` }} />
+          <button onClick={openCalendarInNewTab} className="calendar-share-btn">Open Calendar in New Tab</button>
+        </div>
       </div>
     </div>
   );

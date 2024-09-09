@@ -1,19 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+/* Main About Section */
 .about {
-    padding: 20px; /* Optional: padding for aesthetics */
-    height: 60vh;
-    margin: 50px 100px;
+    padding: 40px 20px; /* Adjusted for better mobile responsiveness */
+    margin: 50px auto; /* Center on the page */
+    width: 100%;
+    max-width: 1200px; /* Limit the max width for larger screens */
+    height: auto; /* Remove fixed height for better responsiveness */
+    font-family: 'Lato', sans-serif;
 }
 
+/* Container for text and image */
 .about-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* need heigh and width bef you can do alignmentt */
+    gap: 30px; /* Add gap between the text and image */
 }
 
+/* Left text container */
 .left-container {
     display: flex;
     flex-direction: column;
@@ -21,53 +27,82 @@
     width: 65%;
 }
 
+/* Title (Who We Are) */
 .wwa-title {
     align-self: flex-start;
-    margin-left: -20px;
     color: #00B3A6;
-    font-size: 6em;
-    width: 100%;
+    font-size: clamp(36px, 8vw, 96px); /* Responsive font size */
+    margin-bottom: 20px;
 }
 
+/* Description */
 .about-description {
     color: #166A63;
     text-align: left;
-    font-size: 2em;
-    line-height: 1.5;
-    margin-top: -50px;
+    font-size: clamp(16px, 2.5vw, 24px); /* Responsive font size */
+    line-height: 1.6;
     margin-bottom: 40px;
     width: 100%;
     font-weight: 400;
 }
 
+/* Button styling */
 .button {
     background-color: black;
     color: white;
-    padding: 20px 40px;
-    /* Adjust padding for a more balanced button */
-    border-radius: 130px;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.5em;
-    /* Use relative font size for scalability */
+    padding: 15px 30px; /* Adjusted for better balance */
+    border-radius: 50px; /* Smoother, smaller border radius */
+    font-size: clamp(16px, 2.5vw, 24px); /* Responsive font size */
     cursor: pointer;
-    /* Change cursor to pointer for interactivity */
-    transition: background-color 0.3s;
-    /* Add transition for hover effect */
-}
-.right-image {
-    background-color: #00B3A6;
-    width: 30%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-
-}
-.right-image img {
-    width: 70%;
-    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .button:hover {
     background-color: #333;
-    /* Darker shade on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Right Image Section */
+.right-image {
+    background-color: #00B3A6;
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.right-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column; /* Stack text and image */
+        align-items: center;
+    }
+
+    .right-image {
+        width: 100%; /* Image takes full width on smaller screens */
+        max-width: 400px;
+    }
+
+    .left-container {
+        width: 100%; /* Text container takes full width */
+    }
+}
+
+@media (max-width: 600px) {
+    .about-description {
+        margin-bottom: 30px; /* Reduce margin for smaller screens */
+    }
+
+    .right-image {
+        max-width: 300px; /* Restrict image size further */
+    }
 }

@@ -21,6 +21,10 @@ const Resources = () => {
           <h1>Career Development</h1>
           <IoIosArrowDropright className="custom-icon" />
         </div>
+        <div className='box'>
+          <h1>Photo Album</h1>
+          <IoIosArrowDropright className="custom-icon" />
+        </div>
 
       </div>
       

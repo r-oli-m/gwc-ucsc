@@ -4,10 +4,17 @@ import '../styles/Welcome.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+const images = [
+  'https://media.licdn.com/dms/image/C4D1BAQExt2gb7chXPQ/company-background_10000/0/1583295048993/girlswhocode_cover?e=2147483647&v=beta&t=AIZD0J-1rK4wQk5X1DLlBS4cUPPh3WRvlNRIVbyRRCk',
+  'https://i.ytimg.com/vi/pB-oMx00mg4/maxresdefault.jpg',
+  'https://gwc.soe.ucsc.edu/sites/default/files/content-sections/2020-08/looker%20tour%20gwc%20.jpg',
+  'https://www.collegetransitions.com/wp-content/uploads/2024/01/GWCODE.jpg',
+];
+
 const Welcome = () => {
   const settings = {
-    dots: true,
-    arrows: true,
+    dots: true, 
+    arrows: true, 
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -21,7 +28,7 @@ const Welcome = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: true, 
         },
       },
       {
@@ -29,7 +36,8 @@ const Welcome = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 2,
+          dots: true, 
+          arrows: false, 
         },
       },
       {
@@ -37,17 +45,12 @@ const Welcome = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
+          arrows: false,
         },
       },
     ],
   };
-
-  const images = [
-    'https://media.licdn.com/dms/image/C4D1BAQExt2gb7chXPQ/company-background_10000/0/1583295048993/girlswhocode_cover?e=2147483647&v=beta&t=AIZD0J-1rK4wQk5X1DLlBS4cUPPh3WRvlNRIVbyRRCk',
-    'https://i.ytimg.com/vi/pB-oMx00mg4/maxresdefault.jpg',
-    'https://gwc.soe.ucsc.edu/sites/default/files/content-sections/2020-08/looker%20tour%20gwc%20.jpg',
-    'https://www.collegetransitions.com/wp-content/uploads/2024/01/GWCODE.jpg',
-  ];
 
   return (
     <div className='welcome'>

@@ -1,26 +1,65 @@
+/* Main Footer styling */
+.footer {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    align-items: center;
+    width: 100%;
+    background-color: #ffe5ec;
+    border-top: 3px solid #ffd0dcb9;
+    padding: 20px 0; /* Adjust padding for better responsiveness */
+    margin-top: auto; /* Ensure footer stays at the bottom */
+}
+
+/* Footer links styling */
 .footer-links {
     display: flex;
-    justify-content: flex-end;
-    align-self: center;
+    gap: 40px; /* Add gap between icons */
+    justify-content: center;
 }
 
 .footer-links a {
-    font-weight: 400;
     font-size: 24px;
     color: #6E7477;
-    padding: 0 40px;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+/* Hover effect for icons */
 .footer-links a:hover {
-    opacity: 0.75;
+    color: #00B3A6; /* Change color on hover */
 }
 
-.footer-links a::after {
-    content: "";
-    position: absolute;
-    left: 25%;
-    bottom: -5px;
-    height: 5px;
-    background-color: #6E7477;
+/* Responsive styling */
+@media (max-width: 1024px) {
+    .footer-links {
+        gap: 30px; /* Reduce gap between icons */
+    }
+
+    .footer-links a {
+        font-size: 22px;
+    }
 }
 
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 0;
+    }
+
+    .footer-links {
+        gap: 20px;
+    }
+
+    .footer-links a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links {
+        gap: 15px; /* Further reduce gap on smaller screens */
+    }
+
+    .footer-links a {
+        font-size: 18px; /* Reduce icon size for mobile */
+    }
+}
