@@ -1,5 +1,5 @@
 {
-    "homepage": "https://r-oli-m.github.io/gwc-ucsc.github.io",
+    "homepage": "https://r-oli-m.github.io/gwc-ucsc/",
     "name": "ucsc-gwc-frontend",
     "version": "0.1.0",
     "private": true,
@@ -27,7 +27,7 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build -r https://github.com/r-oli-m/gwc-ucsc.github.io.git"
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
