@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <div className="page-container">
-      <Router>
+      <Router basename="/gwc-ucsc">
         <Navbar />
         <Routes>
           <Route path="/" element={<Welcome />} />  {/* landing page */}
