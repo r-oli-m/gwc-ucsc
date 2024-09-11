@@ -48,11 +48,11 @@ const PeopleList = () => {
           const imageFileNameJpg = `${firstName}_${lastName}.jpg`;
 
           // Check for .jpeg or .jpg version of the image
-          const imageUrl = images[imageFileNameJpeg] || images[imageFileNameJpg] || '/blank_profile_picture.png'; // Use default image if not found
+          const imageUrl = images[imageFileNameJpeg] || images[imageFileNameJpg] || 'https://www.colorado.edu/cmci/sites/default/files/styles/small/public/people/blank_pfp_2.png?itok=cfCZ2wEU'; // Use default image if not found
 
           return (
             <div key={index} className="person-card">
-              <img src={imageUrl} alt={fullName} onError={(e) => { e.target.src = '/blank_profile_picture.png'; }} // Fallback to blank image on error
+              <img src={imageUrl} alt={fullName} onError={(e) => { e.target.src = 'https://www.colorado.edu/cmci/sites/default/files/styles/small/public/people/blank_pfp_2.png?itok=cfCZ2wEU'; }} // Fallback to blank image on error
               />
               <div className='person-info'>
                 <a href={linkedin} target="_blank" rel="noreferrer">
