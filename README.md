@@ -1,4 +1,4 @@
-# Girls Who Code Website
+# Girls Who Code @ UCSC Website
 Welcome to the Girls Who Code UCSC website, designed to inspire engagement with tech and establish support for underrepresented communities
 
 ## Table of Contents
