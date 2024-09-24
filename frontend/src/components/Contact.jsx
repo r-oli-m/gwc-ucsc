@@ -1,46 +1,43 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import '../styles/Contact.css';
 
 const Contact = () => {
-  // State variables for name, email, and message
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  // Handle form submission
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Send form data to the backend
-    fetch('http://localhost:5001/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, email, message }),
-    })
-      .then(response => {
-        if (response.ok) {
-          console.log('Email sent successfully');
-          // Reset form fields
-          setName('');
-          setEmail('');
-          setMessage('');
-        } else {
-          console.error('Error sending email');
-        }
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+    };
+
+    emailjs.send('service_mpuy3wv', 'template_hbh16um', templateParams, 'bkABtgPH71LXtnExm')
+      .then((response) => {
+        console.log('Email sent successfully:', response.text);
+        alert('Message sent successfully!');
+
+        setName('');
+        setEmail('');
+        setMessage('');
       })
-      .catch(error => {
-        console.error('Error:', error);
+      .catch((error) => {
+        console.error('Error sending email:', error.text);
       });
   };
-
 
   return (
     <div className='contact'>
       <div className="form-container">
         <h1>Contact Us</h1>
-        <form id="contact-form" onSubmit={handleSubmit} method="POST">
+        <form id="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
@@ -48,6 +45,7 @@ const Contact = () => {
               className="form-control"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </div>
           <div className="form-group">
@@ -58,6 +56,7 @@ const Contact = () => {
               aria-describedby="emailHelp"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="form-group">
@@ -67,6 +66,7 @@ const Contact = () => {
               rows="5"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
+              required
             />
           </div>
           <button type="submit" className="btn">Submit</button>
