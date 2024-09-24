@@ -24,7 +24,7 @@
 /* Individual Box Styling */
 .box {
     color: #303232;
-    height: 280px;
+    height: 200px;
     width: 100%; /* Make the boxes responsive */
     max-width: 350px; /* Limit the box width */
     display: flex;
@@ -47,17 +47,18 @@
     font-weight: 600;
 }
 
-/* Hover effect on boxes */
-.box:hover {
-    transform: translateY(-10px); /* More noticeable lift effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Softer shadow */
-}
-
 /* Custom Icon Styling */
 .custom-icon {
     font-size: 40px;
     margin-bottom: 20px;
-    color: #0c6b68;
+    color: #0c6b68; 
+    transition: transform 0.3s ease;
+    background-color: transparent;
+}
+
+.custom-icon:hover {
+    transform: translateY(-10px) scale(1.1); /* More noticeable lift effect */
+    color: #083f3d; 
 }
 
 /* Responsive adjustments */

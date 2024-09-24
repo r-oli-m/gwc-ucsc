@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <div className='footer-links'>
-                <a href="https://discord.gg/t8c3kQ4b" target="_blank" rel="noreferrer">
+                <a href="https://discord.gg/TnQasr5S" target="_blank" rel="noreferrer">
                     <FaDiscord size={30} />
                 </a>
                 <a href="https://www.instagram.com/gwcucsc/" target="_blank" rel="noreferrer">

@@ -64,6 +64,9 @@
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); /* Slight shadow to elevate */
   transition: transform 0.2s ease-in-out;
+  word-wrap: break-word; /* Allow long words to break */
+  min-width: 500px; /* Restrict width to 300px */
+  max-width: 700px;
 }
 
 .event-item:hover {
@@ -81,6 +84,7 @@
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   padding: 15px;
+  min-width: 400px;
 }
 
 /* Calendar iframe */
