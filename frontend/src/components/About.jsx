@@ -17,10 +17,10 @@ const About = () => {
         <div className="left-container">
           <h1 className="wwa-title">Who We Are</h1>
           <h3 className="about-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Cursus imperdiet sed id elementum. Quam vel aliquam sit vulputate.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Cursus imperdiet sed id elementum. Quam vel aliquam sit vulputate.
+          At UCSC Girls Who Code, we believe in the power of technology to transform lives and communities. 
+          Our organization is committed to creating a supportive space for underrepresented backgrounds 
+          to build confidence and enjoyment through coding. Through workshops, socials, guest speaker events, and collaborative projects, 
+          we provide hands-on experience and valuable resources to help our members thrive in the tech industry.
           </h3>
           <button onClick={handleClick} className="button">
             Meet the people of Girls Who Code!

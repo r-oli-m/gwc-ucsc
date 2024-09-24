@@ -56,9 +56,11 @@ const Welcome = () => {
     <div className='welcome'>
       <h1 className="title">&lt;\Girls Who Code @ UCSC&gt;</h1>
       <h3 className="welcome-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Cursus imperdiet sed id elementum. Quam vel aliquam sit vulputate.
-        Imperdiet sed id elementum. Quam vel aliquam sit vulputate ipsum dolor sit.
+      Welcome to UCSC Girls Who Code! 
+      We are a vibrant community of technologists dedicated to bridging the gender gap through
+      education, mentorship, and community building.
+      Join us as we explore the exciting world of computer science, professional development, and 
+      support each other in our journey to become leaders in tech.
       </h3>
       <div className="custom-slider-container">
         <Slider {...settings}>
