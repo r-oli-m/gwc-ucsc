@@ -10,7 +10,7 @@ const Resources = () => {
 
       <div className='boxes-container'>
         <div className='box'>
-          <h1>Workshop Slides 👩‍🏫</h1>
+          <h1>Workshop Slides 🛝</h1>
           <IoIosArrowDropright className="custom-icon"/>
         </div>
         <div className='box'>

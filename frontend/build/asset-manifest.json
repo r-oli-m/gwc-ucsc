@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gwc-ucsc/static/css/main.fecbe80e.css",
-    "main.js": "/gwc-ucsc/static/js/main.32959222.js",
+    "main.js": "/gwc-ucsc/static/js/main.2f25299f.js",
     "static/js/453.88293b06.chunk.js": "/gwc-ucsc/static/js/453.88293b06.chunk.js",
     "static/media/Dishita_Jhawar.jpeg": "/gwc-ucsc/static/media/Dishita_Jhawar.0a695b72732d17a79fdf.jpeg",
     "static/media/Reva_Mahto.jpeg": "/gwc-ucsc/static/media/Reva_Mahto.96122b035a326f8106ee.jpeg",
@@ -20,11 +20,11 @@
     "static/media/slick.woff": "/gwc-ucsc/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/gwc-ucsc/index.html",
     "main.fecbe80e.css.map": "/gwc-ucsc/static/css/main.fecbe80e.css.map",
-    "main.32959222.js.map": "/gwc-ucsc/static/js/main.32959222.js.map",
+    "main.2f25299f.js.map": "/gwc-ucsc/static/js/main.2f25299f.js.map",
     "453.88293b06.chunk.js.map": "/gwc-ucsc/static/js/453.88293b06.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fecbe80e.css",
-    "static/js/main.32959222.js"
+    "static/js/main.2f25299f.js"
   ]
 }
