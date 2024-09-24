@@ -17,10 +17,10 @@ const About = () => {
         <div className="left-container">
           <h1 className="wwa-title">Who We Are</h1>
           <h3 className="about-description">
-          At UCSC Girls Who Code, we believe in the power of technology to transform lives and communities. 
-          Our organization is committed to creating a supportive space for underrepresented backgrounds 
-          to build confidence and enjoyment through coding. Through workshops, socials, guest speaker events, and collaborative projects, 
-          we provide hands-on experience and valuable resources to help our members thrive in the tech industry.
+          At UCSC Girls Who Code, we create a supportive space for individuals from underrepresented backgrounds to build confidence and discover joy in coding. 
+          Through workshops, socials, guest speakers, and collaborative projects, we provide hands-on experience and resources to help our members thrive in tech.
+          Our informal, inclusive environment moves beyond traditional educational settings, prioritizing deeper connections with the community. Join us as we inspire 
+          one another and celebrate our coding journey!
           </h3>
           <button onClick={handleClick} className="button">
             Meet the people of Girls Who Code!

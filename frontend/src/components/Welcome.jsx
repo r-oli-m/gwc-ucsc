@@ -59,8 +59,6 @@ const Welcome = () => {
       Welcome to UCSC Girls Who Code! 
       We are a vibrant community of technologists dedicated to bridging the gender gap through
       education, mentorship, and community building.
-      Join us as we explore the exciting world of computer science, professional development, and 
-      support each other in our journey to become leaders in tech.
       </h3>
       <div className="custom-slider-container">
         <Slider {...settings}>
