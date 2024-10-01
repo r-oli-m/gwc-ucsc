@@ -5,9 +5,12 @@ import { FaLinkedin } from "react-icons/fa";
 // Import images dynamically
 const importAll = (r) => {
   let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  r.keys().forEach((item) => {
+    images[item.replace('./', '')] = r(item);  
+  });
   return images;
 };
+
 const images = importAll(require.context('../assets/people', false, /\.(jpeg|jpg|png)$/));
 
 const PeopleList = () => {

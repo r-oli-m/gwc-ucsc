@@ -6,7 +6,6 @@ import { IoIosArrowDropright } from "react-icons/io";
 const Resources = () => {
   return (
     <div className='resources'>
-      <h1></h1>
 
       <div className='boxes-container'>
         <div className='box'>

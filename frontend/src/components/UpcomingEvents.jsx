@@ -17,7 +17,7 @@ const UpcomingEvents = () => {
       .catch((error) => {
         console.error("Error loading GAPI client for API", error);
       });
-  }, []);
+  }, [loadEvents]);
 
   const loadEvents = () => {
     listUpcomingEvents()
