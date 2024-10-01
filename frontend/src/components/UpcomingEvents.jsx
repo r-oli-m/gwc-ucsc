@@ -9,17 +9,8 @@ const UpcomingEvents = () => {
 
   const calendarLink = "https://calendar.google.com/calendar/embed?src=b9543132592733d502fbaea4d0b8307a9f277c0f1632f03bf7855ca6588c3047%40group.calendar.google.com&ctz=America%2FLos_Angeles&showTime=0";
 
-  useEffect(() => {
-    initClient()
-      .then(() => {
-        loadEvents();
-      })
-      .catch((error) => {
-        console.error("Error loading GAPI client for API", error);
-      });
-  }, [loadEvents]);
-
-  const loadEvents = () => {
+  // Memoize the loadEvents function with useCallback
+  const loadEvents = useCallback(() => {
     listUpcomingEvents()
       .then(response => {
         const eventItems = response.result.items.map(event => ({
@@ -34,7 +25,19 @@ const UpcomingEvents = () => {
       .catch((error) => {
         console.error("Error fetching events", error);
       });
-  };
+  }, []); // Empty dependency array to ensure the function is only created once
+
+  useEffect(() => {
+    initClient()
+      .then(() => {
+        loadEvents();
+      })
+      .catch((error) => {
+        console.error("Error loading GAPI client for API", error);
+      });
+  }, [loadEvents]);
+
+  
 
   const formatEventDate = (dateTimeString) => {
     const date = new Date(dateTimeString);
