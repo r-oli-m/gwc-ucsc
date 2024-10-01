@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { initClient, listUpcomingEvents } from './googleApi';
 import '../styles/UpcomingEvents.css';
 import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
