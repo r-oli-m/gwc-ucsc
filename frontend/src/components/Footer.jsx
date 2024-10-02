@@ -19,10 +19,10 @@ const Footer = () => {
                 <a href="mailto:ucscgwc@gmail.com" target="_blank" rel="noreferrer">
                     <IoMail size={30} />
                 </a>
-                <a href="https://github.com/MadelineMiller/ucsc-gwc-webapp" target="_blank" rel="noreferrer">
+                <a href="https://github.com/r-oli-m/gwc-ucsc" target="_blank" rel="noreferrer">
                     <FaGithub size={30} />
                 </a>
-                <a href="https://open.spotify.com/playlist/1o7SF5Lc85F6QZ9jBkcGaK?si=9e869860a0fc4d98" target="_blank" rel="noreferrer">
+                <a href="https://open.spotify.com/playlist/48PzZkDZH230HAxPICJ6bv?si=ZpcKOztfQ5CrlMwuN2Nv_w&pi=u-bA1t4ScSROeV" target="_blank" rel="noreferrer">
                     <FaSpotify size={30} />
                 </a>
 
