@@ -13,7 +13,7 @@ const Footer = () => {
                 <a href="https://www.instagram.com/gwcucsc/" target="_blank" rel="noreferrer">
                     <FaInstagram size={30} />
                 </a>
-                <a href="https://www.linkedin.com/in/ucsc-gwc-32558728b/" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/company/ucsc-girls-who-code/" target="_blank" rel="noreferrer">
                     <FaLinkedin size={30} />
                 </a>
                 <a href="mailto:ucscgwc@gmail.com" target="_blank" rel="noreferrer">
